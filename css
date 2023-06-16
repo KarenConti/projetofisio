@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*---- COLORS -----*/
+body[data-theme="normal"] {
+    --color-1: #ffffff;
+    --color-2: #000000;
+    --color-3: #2b2b2b;
+    --color-4: #338a7b;
+
+}
+
+body[data-theme="read-mod"] {
+    --color-1: #000000;
+    --color-2: #ffffff;
+    --color-3: #22171e;
+}
+/*---- FIM COLORS -----*/
+
+.menu-principal {
+    width: 100%;
+    background-color: var(--color-2);
+    box-shadow: 0px 6px 30px -4px rgba(0, 0, 0, 0.445);
+}
+
+.menu-principal nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-principal .header-1 {
+    width: 90%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-2);
+}
+
+.menu-principal .header-1 img {
+    height: 50px;
+    width: fit-content;
+}
+
+.menu-principal .header-1 .bonequinhos {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-principal .header-2 {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--color-1);
+}
+
+.menu-principal .header-2 li {
+    list-style: none;
+}
+
+.menu-principal .header-2 li a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: var(--color-3);
+    font-size: 1.3rem;
+    padding: 10px;
+    transition: all .5s;
+    
+
+    &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 0%;
+        height: 2px;
+        bottom: 5px;
+        background-color: var(--color-4);
+        transition: all .2s;
+    }
+
+    &:hover::after {
+        transition: all .2s;
+        width: 85%;
+    }
+
+    &:hover {
+        transition: all .2s;
+        color: var(--color-4);
+    }
+}
+
+.intro {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.intro p {
+    color: var(--color-4);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+article {
+    width: 90%;
+    margin: 20px auto;
+}
+
+article h2 {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--color-4);
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+article h3 {
+    color: var(--color-4);
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+article > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+article > div .card {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+    
+    background-color: var(--color-4);
+    
+    transition: all 1s;
+
+    &:hover {
+        transition: all .2s;      
+    }
+
+    &:hover h5 {
+        transition: all .2s;  
+        height: 50%;    
+        font-size: 1rem;
+    }
+
+    &:hover .text-box {
+        transition: all .2s; 
+        height: 50%;
+        pointer-events: none;     
+    }
+}
+
+article > div .card h5 {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    transition: all 1s;
+    font-size: 1.5rem;
+    height: 100%;
+    color: var(--color-1);
+}
+
+article > div .card .text-box {
+    display: flex;    
+    width: 90%;
+    align-items: flex-start;
+    justify-content: center;
+    
+    transition: all 1s;
+    height: 0%;
+}
+
+article > div .card .text-box p {
+    font-size: 1.2rem;
+    color: var(--color-1);   
+}
+
+.prevençãoh2 {
+    margin: 20px auto;
+    width: 90%;
+    height: fit-content;
+    color: var(--color-4);
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.meio {
+    margin: 50px auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.meio p {
+    color: var(--color-4);
+    font-weight: 500;
+}
+
+.box-card2 {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card2 {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--color-4);
+    position: relative;
+
+    &:hover img{
+        transition: all .2s;
+        opacity: 0;
+    }
+}
+
+.card2 img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    transition: all 1s;
+}
+
+.card2 p {
+    color: var(--color-1);
+    font-size: 2rem;
+    text-align: center;   
+}
+
+.final p {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.final p {
+    color: var(--color-4);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.Graficos{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 100px auto;
+    height: fit-content;
+}
+.card-grafico {
+    background-color: #3d3d3d;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+
+    &:hover {
+        transition: all .2s;
+        transform: scale(1.05);
+    }
+}
+
+.box-grafico-title {
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.box-grafico-title p {
+    font-weight: 600;
+    color: var(--color-1);
+}
+
+.box-grafico-img {
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-grafico-img img {
+    height: 90%;
+    border-radius: 50%;
+}
+
+.box-grafico-text {
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    gap: 6px;
+}
+
+.box-grafico-text p {
+    height: 100%;
+    color: var(--color-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.box-grafico-text p span {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+.box-grafico-text p span.sim {
+    background-color: #3b76bc;
+}
+
+.box-grafico-text p span.nao {
+    background-color: #c43e3a;
+}
+
+.box-grafico-text p span.cardiopatia {
+    background-color: #3b76bc;
+}
+
+.box-grafico-text p span.infarto {
+    background-color: #c43e3a;
+}
+
+.box-grafico-text p span.hipertencao {
+    background-color: #a4cb4a;
+}
+
+@media (max-width: 1100px) {
+    .box-card2 {
+        height: fit-content;
+    }
+}
